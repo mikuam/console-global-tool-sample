@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Threading;
+using McMaster.Extensions.CommandLineUtils;
 
 namespace MichalBialecki.com.MikTrain
 {
+    [Command(Description = "My global command line tool.")]
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.ReadKey();
+        public static int Main(string[] args) => CommandLineApplication.Execute<Program>(args);
 
+        private int OnExecute()
+        {
             MultiLineAnimation();
 
-            Console.ReadKey();
+            return 0;
         }
 
         static void MultiLineAnimation()
@@ -30,7 +32,8 @@ namespace MichalBialecki.com.MikTrain
                         Console.WriteLine("║    │││  O  ║");
                         Console.WriteLine("║    OOO     ║");
                         break;
-                    };
+                    }
+                        ;
                     case 1:
                     {
                         Console.WriteLine("╔════╤╤╤╤════╗");
@@ -38,7 +41,8 @@ namespace MichalBialecki.com.MikTrain
                         Console.WriteLine("║    ││││    ║");
                         Console.WriteLine("║    OOOO    ║");
                         break;
-                    };
+                    }
+                        ;
                     case 2:
                     {
                         Console.WriteLine("╔════╤╤╤╤════╗");
@@ -46,7 +50,8 @@ namespace MichalBialecki.com.MikTrain
                         Console.WriteLine("║  O  │││    ║");
                         Console.WriteLine("║     OOO    ║");
                         break;
-                    };
+                    }
+                        ;
                     case 3:
                     {
                         Console.WriteLine("╔════╤╤╤╤════╗");
@@ -54,7 +59,8 @@ namespace MichalBialecki.com.MikTrain
                         Console.WriteLine("║    ││││    ║");
                         Console.WriteLine("║    OOOO    ║");
                         break;
-                    };
+                    }
+                        ;
                 }
 
                 counter++;
